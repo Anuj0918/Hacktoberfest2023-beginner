@@ -1,0 +1,46 @@
+  Promise in javascript is an object that represents eventual completion or failure of the async operation.
+    A Promise is in one of these states:
+
+pending: initial state, neither fulfilled nor rejected.
+fulfilled: meaning that the operation was completed successfully.
+rejected: meaning that the operation failed.
+A promise is said to be settled if it is either fulfilled or rejected, but not pending.
+ To create a promise object we can use the Promise class constructor. We can do a new Promise and it will create a brand new Promise object for us.
+Now this Promise constructor requires a mandatory argument which is a callback function also referred to as executor callback. 
+    This executor callback takes two arguments resolve and reject.
+let p = new Promise(function exec(resolve, reject) {
+    // executor callback
+});
+
+** How to consume  a promise ** 
+The handler methods, .then(), .catch() and .finally(), help to create the link between the executor and the consumer functions so that they can be in sync when a promise resolves or rejects.
+How to Use the .then() Promise Handler.
+The .then() method should be called on the promise object to handle a result (resolve) or an error (reject).
+It accepts two functions as parameters. Usually, the .then() method should be called from the consumer function where you would like to know the outcome of a promise's execution.
+
+promise.then(
+  (result) => { 
+     console.log(result);
+  },
+  (error) => { 
+     console.log(error);
+  }
+);
+How to Use the .catch() Promise Handler
+You can use this handler method to handle errors (rejections) from promises. The syntax of passing null as the first argument to the .then() is not a great way to handle errors. 
+So we have .catch() to do the same job with some neat syntax:
+ .catch(function(error){
+        //handle error
+    })
+
+
+
+
+
+
+
+
+
+
+
+
